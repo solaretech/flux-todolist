@@ -1,4 +1,5 @@
 import { EventEmitter } from "events";
+import dispatcher from "../dispatcher";
 import { createBrotliDecompress } from "zlib";
 
 class TodoStore extends EventEmitter {
@@ -32,9 +33,14 @@ class TodoStore extends EventEmitter {
   getAll(){
     return this.todos;
   }
+
+  handleActions(action) {
+    console.log("TodoStore received an action", action);
+  }
 }
 
-const todoStore = new TodoStore
+const todoStore = new TodoStore;
+dispatcher.register(todoStore.handleActions.bind(todoStore));
 
 window.todoStore = todoStore;
 export default todoStore;

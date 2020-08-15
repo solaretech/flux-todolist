@@ -1,6 +1,6 @@
 import { EventEmitter } from "events";
 
-class TodoStore extends EventEmmiter {
+class TodoStore extends EventEmitter {
   constructor() {
     super();
     this.todos = [
@@ -10,7 +10,7 @@ class TodoStore extends EventEmmiter {
         complete: false
       },{
         id: 235684679,
-        text: 'Pay Bills',
+        text: 'Pay Water Bills',
         complete: false
       }
     ];

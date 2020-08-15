@@ -7,7 +7,7 @@ export default class Todos extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: todoStore.getAll()
+      todos: TodoStore.getAll()
     };
   }
 

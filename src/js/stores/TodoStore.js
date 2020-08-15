@@ -35,7 +35,11 @@ class TodoStore extends EventEmitter {
   }
 
   handleActions(action) {
-    console.log("TodoStore received an action", action);
+    switch(action.type){
+      case 'CREATE_TODO': {
+        this.creatreTodo(action.text);
+      }
+    }
   }
 }
 
